@@ -1,0 +1,43 @@
+
+/*style*/
+[data-tab-info] {
+    display: none;
+}
+  
+.active[data-tab-info] {
+    display: block;
+}
+  
+.tab-content {
+    font-size: small;
+    font-family: sans-serif;
+    color: rgb(82, 75, 75);
+}
+  
+.tabs {
+    font-size: medium;
+    color: #303030 ;
+    margin: 0px;
+}
+  
+.tabs div {
+    padding: 5px;
+    border-bottom: 3px solid #2589BD;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+
+}
+  
+.tabs div:hover {
+    cursor: pointer;
+    color: #303030;
+    background-color: #DBDBDB;
+}
+main{
+   padding-top:5%; 
+}
+@media (max-width: 768px) {
+    main{
+        padding-top: 18%;
+    }
+}
