@@ -1,3 +1,4 @@
+function tabbar(){
 const tabs = document.querySelectorAll('[data-tab-value]')
         const tabInfos = document.querySelectorAll('[data-tab-info]')
   
@@ -12,3 +13,4 @@ const tabs = document.querySelectorAll('[data-tab-value]')
                 target.classList.add('active');
             })
         })
+    }

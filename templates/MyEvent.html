@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <!--js perso-->
-
+    <script src="../static/js/accordion.js"></script>
+    <script src="../static/js/tab.js"></script>
 </head>
 <body class="principal">
     <header class="p-2 text-bg-dark fixed-top ">
@@ -27,16 +28,38 @@
     </header>
     <main class="container" >
         <div class="tabs row text-center justify-content-around">
-            <div class="col-6 col-sm-4 " >
-                <span data-tab-value="#tab_1">Mis Eventos</span>
+            <div class="col-6 col-sm-4 " onclick="tabbar()" >
+                <span data-tab-value="#tab_1" >Mis Eventos</span>
             </div>
-            <div class="col-6 col-sm-4 ">
+            <div class="col-6 col-sm-4 " onclick="tabbar()">
                 <span data-tab-value="#tab_2" >Eventos guardados</span>
             </div>
         </div>
         <div class="tab-content">
             <div class="tabs__tab active" id="tab_1" data-tab-info>
                 <p>Guardaremos los eventos creados aquí</p>
+                <div class="card">
+                    <div class="card-body"> <!--cambiar los id en data-tab-value, corregir y verificar el js, hacer el css y copiar este movimiento a la segunda parte. -->
+                        <div data-bs-toggle="collapse" href="#collapse">
+                            <h6 >Titulo del evento</h6>
+                            <p>fecha o info extra del evento</p>
+                        </div>
+                        <div class="collapse" id="collapse">
+                            <p>otra info extra de los eventos ubicacion y tal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div data-bs-toggle="collapse" href="#collapse1">
+                            <h6 >Titulo del evento 2</h6>
+                            <p>fecha o info extra del evento 2</p>
+                        </div>
+                        <div class="collapse" id="collapse1">
+                            <p>otra info extra de los eventos ubicacion y tal</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tabs__tab" id="tab_2" data-tab-info>
                 <p>Guardaremos los eventos a los cuales nos inscribimos </p>
@@ -63,20 +86,5 @@
           </div>
     </footer>
 </body>
-<script type="text/javascript">
-    const tabs = document.querySelectorAll('[data-tab-value]')
-        const tabInfos = document.querySelectorAll('[data-tab-info]')
-  
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = document
-                    .querySelector(tab.dataset.tabValue);
-  
-                tabInfos.forEach(tabInfo => {
-                    tabInfo.classList.remove('active')
-                })
-                target.classList.add('active');
-            })
-        })
-</script>
+
 </html>

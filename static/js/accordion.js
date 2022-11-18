@@ -1,4 +1,5 @@
-$(document).ready(function() {
+function accordion() {
+  $(document).ready(function() {
     $('.panel-collapse').on('show.bs.collapse', function () {
       $(this).siblings('.panel-heading').addClass('active');
     });
@@ -7,3 +8,4 @@ $(document).ready(function() {
       $(this).siblings('.panel-heading').removeClass('active');
     });
   });
+}
